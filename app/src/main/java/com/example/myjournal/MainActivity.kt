@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
          navController = findNavController(R.id.nav_host_fragment_content_main)
-        NavigationUI.setupActionBarWithNavController(this,navController)
 
     }
 

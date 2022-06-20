@@ -5,47 +5,43 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.myjournal.auth.event.AuthEvent
-import com.example.myjournal.data.model.RegistrationRequest
-import com.example.myjournal.data.model.RegistrationResponse
-import com.example.myjournal.data.model.Resource
+import com.example.myjournal.data.model.*
 import com.example.myjournal.data.remote.RetrofitBuilder
 import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 
-class RegisterViewModel : ViewModel() {
+class LoginViewModel : ViewModel() {
     val isFormValid: MutableLiveData<Boolean> = MutableLiveData(true)
     var status: MutableLiveData<Resource<*>> = MutableLiveData()
     private val api = RetrofitBuilder.gossipCentralAPI
 
     fun onEvent(event: AuthEvent) {
         when (event) {
-            is AuthEvent.RegistrationEvent -> {
+            is AuthEvent.LoginEvent -> {
                 val request = event.request
                 if (
                     request.email.isEmpty() ||
-                    request.firstName.isEmpty() ||
-                    request.lastName.isEmpty() ||
                     request.password.isEmpty()
                 ) {
                     isFormValid.value = false
                     return
                 }
-                register(request)
+                login(request)
             }
             else -> {}
         }
     }
 
-    private fun register(request: RegistrationRequest) {
+    private fun login(request: LoginRequest) {
         status.value = Resource.loading(data = null);
         viewModelScope.launch(Dispatchers.IO) {
             val threadInfo = Thread.currentThread().name
             Log.i("register", "register running on thread $threadInfo")
-            val result: RegistrationResponse?
+            val result: LoginResponse?
             try {
-                result = api.register(request)
+                result = api.login(request)
                 if (result.successful) {
                     Log.i("register-success", result.toString())
                     val resource = Resource.success(data = result.data)
@@ -92,7 +88,5 @@ class RegisterViewModel : ViewModel() {
 
 
     }
-
-
 
 }
