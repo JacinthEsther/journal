@@ -4,10 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/MyJournal/app/src/main/res/drawable/coloured_border.xml" value="0.1725" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/MyJournal/app/src/main/res/drawable/dashed_border.xml" value="0.1" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/MyJournal/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/MyJournal/app/src/main/res/layout/content_main.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/MyJournal/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/MyJournal/app/src/main/res/layout/fragment_login.xml" value="0.2" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/MyJournal/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/MyJournal/app/src/main/res/layout/fragment_register.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/MyJournal/app/src/main/res/layout/fragment_search.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/MyJournal/app/src/main/res/menu/menu_main.xml" value="0.1" />
       </map>
     </option>
   </component>
